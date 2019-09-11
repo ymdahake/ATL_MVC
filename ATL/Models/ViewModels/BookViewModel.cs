@@ -9,7 +9,7 @@ namespace ATL.Models.ViewModels
     {
 
         public Book Book { get; set; }
-        public Category Category { get; set; }
+       
         public List<Category> Categories { get; set; }
     }
 }
