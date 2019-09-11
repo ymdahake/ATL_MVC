@@ -39,7 +39,20 @@ namespace ATL.Controllers
             {
                 return View("Add");
             }
-            _db.Books.Add(book);
+
+            Book newBook = new Book();
+            newBook.Title = book.Title;
+            newBook.SubTitle = book.SubTitle;
+            newBook.Thumbnail = book.Thumbnail;
+            newBook.NoOfCopiesAvailable = book.NoOfCopiesAvailable;
+            newBook.Language = book.Language;
+            newBook.ISBN = book.ISBN;
+            newBook.Description = book.Description;
+            newBook.CategoryId = book.CategoryId;
+            newBook.AverageRating = book.AverageRating;
+            newBook.Authors = book.Authors;
+            
+            _db.Books.Add(newBook);
             _db.SaveChanges();
                 
             return RedirectToAction("Index");

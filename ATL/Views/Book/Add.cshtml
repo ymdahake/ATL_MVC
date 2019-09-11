@@ -22,9 +22,9 @@
                 @Html.ValidationMessageFor(m => m.Book.SubTitle)
             </div>
             <div class="form-group">
-                @Html.LabelFor(m => m.Category)
-                @Html.DropDownListFor(m=>m.Category,new SelectList(Model.Categories,"CategoryId","CategoryName"),new { @class = "form-control" })
-                @Html.ValidationMessageFor(m => m.Category)
+                @Html.LabelFor(m => m.Book.CategoryId)
+                @Html.DropDownListFor(m=>m.Book.CategoryId,new SelectList(Model.Categories,"CategoryId","CategoryName"),new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Book.CategoryId)
             </div>
             <div class="form-group">
                 @Html.LabelFor(m => m.Book.Authors)
