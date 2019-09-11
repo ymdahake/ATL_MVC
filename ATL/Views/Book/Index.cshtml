@@ -3,9 +3,25 @@
 @{
     ViewBag.Title = "Index";
 }
-
-    <div>
-        <h2>Index</h2>
-
+<div class="container">
+    <h2> Books from our Library :</h2>
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-lg-3">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <img src="@item.Thumbnail" class="bookImageInside" alt="Sample Image" width="100px" height="150px" />
+                    </div>
+                    <div class="col-lg-8">
+                   
+                            @Html.Label("Title") :
+                            @Html.Label(item.Title)
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-1"></div>
+        }
     </div>
-
+</div>
