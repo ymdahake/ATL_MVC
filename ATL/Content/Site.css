@@ -53,9 +53,10 @@ textarea {
 }
 
 
+/* book index page css*/
 .col-lg-3 {
     border: solid;
-    border-color: black;
+    border-color: #ed5107;
     margin-bottom: 10px;
     padding-left: 0px;
 }
@@ -63,3 +64,22 @@ textarea {
 body{
     margin-top:30px;
 }
+
+/* form control css*/
+
+.form-control:focus {
+    border-color: #293462;
+    outline: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+div.jumbotron {
+    background-image: url(https://cdn.pixabay.com/photo/2014/10/12/07/50/books-485479_960_720.jpg);
+    background-position: 0% 25%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /*color: white;
+    text-shadow: black 0.3em 0.3em 0.3em;*/
+}
+

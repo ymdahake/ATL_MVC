@@ -18,7 +18,7 @@ namespace ATL.Controllers
         // GET: Book
         public ActionResult Index()
         {
-            
+
             List<Book> books = _db.Books.ToList();
             return View(books);
         }
