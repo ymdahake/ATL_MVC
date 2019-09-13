@@ -19,7 +19,7 @@ namespace ATL.Controllers
         public ActionResult Index()
         {
 
-            List<Book> books = _db.Books.ToList();
+            List<Book> books = _db.Books.Include("Category").ToList();
             return View(books);
         }
 
@@ -56,8 +56,12 @@ namespace ATL.Controllers
             _db.SaveChanges();
                 
             return RedirectToAction("Index");
+          
+        }
 
-            
+        public ActionResult Details(Book book)
+        {
+
         }
     }
 }

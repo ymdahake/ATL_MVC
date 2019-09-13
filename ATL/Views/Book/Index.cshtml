@@ -3,47 +3,8 @@
 @{
     ViewBag.Title = "Index";
 }
-<div class="container">
-    <h2> Books from our Library :</h2>
-    <div class="row">
-        @foreach (var item in Model)
-        {
-            <div class="col-lg-3">
-                <div class="row">
-                    <div class="col-lg-4">
-                        <img src="@item.Thumbnail" class="bookImageInside" alt="Sample Image" width="100px" height="150px" />
-                    </div>
-                    <div class="col-lg-8">
-                        <table>
-                            <tr>
-                                <td>@Html.Label("Title")</td>
-                                <td>@Html.Label(item.Title)</td>
-                            </tr>
-                            <tr>
-                                <td>@Html.Label("SubTitle")</td>
-                                <td>@Html.Label(item.SubTitle)</td>
-                            </tr>
-                            <tr>
-                                <td>@Html.Label("Avg.Rating")</td>
-                                <td>@Html.Label(item.AverageRating.ToString())</td>
-                            </tr>
-                            <tr>
-                                <td>@Html.Label("Language")</td>
-                                <td>@Html.Label(item.Language)</td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">
-                                    @Html.ActionLink("Read more...", "Details", "Book")
-                                </td>
-                            </tr>
-                        </table>
-                            
-                           
-                        
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-1"></div>
-        }
-    </div>
+
+<div>
+    @Html.Partial("_Books",Model)
 </div>
+

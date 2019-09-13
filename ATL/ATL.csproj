@@ -247,6 +247,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Book\Add.cshtml" />
     <Content Include="Views\Book\Index.cshtml" />
+    <Content Include="Views\Shared\_Books.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

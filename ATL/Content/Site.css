@@ -57,7 +57,7 @@ textarea {
 .col-lg-3 {
     border: solid;
     border-color: #ed5107;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
     padding-left: 0px;
 }
 
@@ -83,3 +83,6 @@ div.jumbotron {
     text-shadow: black 0.3em 0.3em 0.3em;*/
 }
 
+/*font-family: 'Montserrat', sans-serif;
+font-family: 'Lato', sans-serif;
+font-family: 'Source Sans Pro', sans-serif;*/
