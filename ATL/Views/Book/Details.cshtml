@@ -1,0 +1,116 @@
+﻿@model ATL.Models.Book
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Book</h4>
+    <hr />
+    <table border="2">
+        <tr>
+            <td>
+                <img src="@Model.Thumbnail" alt="Image" />
+            </td>
+            <td>
+
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Title)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Title, new { @class = "form-control" })
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.SubTitle)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.SubTitle)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Authors)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Authors)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Description)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Description)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.CategoryId)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.CategoryId)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.AverageRating)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.AverageRating)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Thumbnail)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Thumbnail)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Language)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Language)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.ISBN)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.ISBN)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.NoOfCopiesAvailable)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.NoOfCopiesAvailable)
+                    </dd>
+
+                </dl>
+            </td>
+
+        </tr>
+        <tr>
+            <td colspan="2">
+               
+                    @Html.ActionLink("Edit", "Edit", new { id = Model.BookId }, new { @class = "btn btn-primary" }) 
+                    @Html.ActionLink("Back to List","Index","Book",new { @class = "btn btn-primary" })
+               
+            </td>
+        
+           
+        </tr>
+    </table>
+   
+</div>

@@ -59,6 +59,8 @@ textarea {
     border-color: #ed5107;
     margin-bottom: 30px;
     padding-left: 0px;
+    height:200px;
+    /*width:300px;*/
 }
 
 body{
@@ -86,3 +88,7 @@ div.jumbotron {
 /*font-family: 'Montserrat', sans-serif;
 font-family: 'Lato', sans-serif;
 font-family: 'Source Sans Pro', sans-serif;*/
+
+.BookDetailsActions{
+    justify-content:center;
+}

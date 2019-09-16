@@ -248,6 +248,7 @@
     <Content Include="Views\Book\Add.cshtml" />
     <Content Include="Views\Book\Index.cshtml" />
     <Content Include="Views\Shared\_Books.cshtml" />
+    <Content Include="Views\Book\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

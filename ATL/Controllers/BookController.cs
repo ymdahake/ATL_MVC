@@ -51,17 +51,31 @@ namespace ATL.Controllers
             newBook.CategoryId = book.CategoryId;
             newBook.AverageRating = book.AverageRating;
             newBook.Authors = book.Authors;
-            
+
             _db.Books.Add(newBook);
             _db.SaveChanges();
-                
+
             return RedirectToAction("Index");
-          
+
         }
 
-        public ActionResult Details(Book book)
+        public ActionResult Details(int id)
+        {
+            Book book = _db.Books.Single(item => item.BookId == id);
+            return View(book);
+        }
+
+        public ActionResult Edit(int id)
         {
 
+            BookViewModel bookViewModel = new BookViewModel()
+            {
+                Book = _db.Books.Single(item => item.BookId == id),
+                Categories = _db.Categories.ToList()
+            };
+            return View("Add", bookViewModel);
+
+                
         }
     }
 }
