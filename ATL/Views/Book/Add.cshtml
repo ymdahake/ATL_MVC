@@ -4,26 +4,26 @@
     ViewBag.Title = "Add";
 }
 
-    <div class="container">
-        <h2>Add</h2>
+<div class="container">
+    <h2>Add</h2>
 
-        @using (Html.BeginForm())
-        {
-            @Html.AntiForgeryToken()
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
 
-            <div class="form-group">
-                @Html.LabelFor(m => m.Book.Title)
-                @Html.TextBoxFor(m => m.Book.Title, new { @class = "form-control" })
-                @Html.ValidationMessageFor(m => m.Book.Title)
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(m => m.Book.SubTitle)
-                @Html.TextBoxFor(m => m.Book.SubTitle, new { @class = "form-control" })
-                @Html.ValidationMessageFor(m => m.Book.SubTitle)
-            </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Book.Title)
+            @Html.TextBoxFor(m => m.Book.Title, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Book.Title)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Book.SubTitle)
+            @Html.TextBoxFor(m => m.Book.SubTitle, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Book.SubTitle)
+        </div>
             <div class="form-group">
                 @Html.LabelFor(m => m.Book.CategoryId)
-                @Html.DropDownListFor(m=>m.Book.CategoryId,new SelectList(Model.Categories,"CategoryId","CategoryName"),new { @class = "form-control" })
+                @Html.DropDownListFor(m => m.Book.CategoryId, new SelectList(Model.Categories, "CategoryId", "CategoryName"), new { @class = "form-control" })
                 @Html.ValidationMessageFor(m => m.Book.CategoryId)
             </div>
             <div class="form-group">
@@ -61,10 +61,19 @@
                 @Html.TextAreaFor(m => m.Book.Description, new { @class = "form-control" })
                 @Html.ValidationMessageFor(m => m.Book.Description)
             </div>
+
             <div class="form-group">
                 <div>
-                    <input type="submit" value="Submit" id="Submit" class="btn btn-primary" />
+                    @if(Model.Book == null)
+                    {
+                    <input type="submit" value="Submit" id="Submit" class="btn btn-primary"  />
+                    }
+                    else
+                    {
+                    <input type="submit" value="Save" id="Submit" class="btn btn-primary" />
+                    }
                 </div>
             </div>
-        }
-    </div>
+
+    }
+</div>
