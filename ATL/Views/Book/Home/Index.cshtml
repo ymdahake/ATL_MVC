@@ -1,5 +1,6 @@
 ﻿@{
     ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <div class="container">
@@ -8,7 +9,7 @@
         <p class="lead">Now book the book online and take it instantly from the bank</p>
         <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
     </div>
-    <div>
-        @*@Html.Action("Index", "Book");*@
-    </div>
+    @*<div>
+        @Html.Partial("_Books")
+    </div>*@
 </div>

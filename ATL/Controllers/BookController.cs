@@ -40,22 +40,29 @@ namespace ATL.Controllers
                 return View("Add");
             }
 
-            Book newBook = new Book();
-            newBook.Title = book.Title;
-            newBook.SubTitle = book.SubTitle;
-            newBook.Thumbnail = book.Thumbnail;
-            newBook.NoOfCopiesAvailable = book.NoOfCopiesAvailable;
-            newBook.Language = book.Language;
-            newBook.ISBN = book.ISBN;
-            newBook.Description = book.Description;
-            newBook.CategoryId = book.CategoryId;
-            newBook.AverageRating = book.AverageRating;
-            newBook.Authors = book.Authors;
+            if (book.BookId!= 0)
+            {
+                Book bookFromDB = _db.Books.Single(item => item.BookId == book.BookId);
+                bookFromDB.Title = book.Title;
+                bookFromDB.SubTitle = book.SubTitle;
+                bookFromDB.Authors = book.Authors;
+                bookFromDB.CategoryId = book.CategoryId;
+                bookFromDB.Description = book.Description;
+                bookFromDB.Language = book.Language;
+                bookFromDB.Thumbnail = book.Thumbnail;
+                bookFromDB.NoOfCopiesAvailable = book.NoOfCopiesAvailable;
+                bookFromDB.ISBN = book.ISBN;
+                bookFromDB.AverageRating = book.AverageRating;
+                _db.SaveChanges();
+            }
+            else
+            {
+                _db.Books.Add(book);
+                _db.SaveChanges();
 
-            _db.Books.Add(newBook);
-            _db.SaveChanges();
+            }
 
-            return RedirectToAction("Index");
+            return RedirectToAction("Index","Book");
 
         }
 
@@ -75,7 +82,16 @@ namespace ATL.Controllers
             };
             return View("Add", bookViewModel);
 
-                
+
+        }
+
+        public ActionResult Remove(int id )
+        {
+            Book book = _db.Books.Single(item => item.BookId == id);
+            _db.Books.Remove(book);
+            _db.SaveChanges();
+            return RedirectToAction("Index", "Book");
+
         }
     }
 }

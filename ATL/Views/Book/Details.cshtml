@@ -2,8 +2,12 @@
 
 @{
     ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+
+@*<link href='bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css' rel='stylesheet' type='text/css'>
+<script src='bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js' type='text/javascript'></script>*@
 <h2>Details</h2>
 
 <div>
@@ -103,14 +107,49 @@
         </tr>
         <tr>
             <td colspan="2">
-               
-                    @Html.ActionLink("Edit", "Edit", new { id = Model.BookId }, new { @class = "btn btn-primary" }) 
-                    @Html.ActionLink("Back to List","Index","Book",new { @class = "btn btn-primary" })
+
+                @Html.ActionLink("Edit", "Edit", new { id = Model.BookId }, new { @class = "btn btn-primary" })
+                @Html.ActionLink("Back to List", "Index", "Book", new { @class = "btn btn-primary" })
+                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">Subscribe</button>
                
             </td>
-        
-           
+
+
         </tr>
     </table>
-   
+    @* Model *@
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Thanks for showing interest in this book</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Please specify the From date ToDate will be populated based on maximum day book can allowed to keep limit at library </p>
+                    <div class="row">
+                        <div class="form-group col-lg-6">
+                            <label for="fromDate">From Date:</label>
+                            <input type="text" class="form-control" id="fromDate" data-provide="datepicker" style='width: 300px;'>
+                        </div>
+                        <div class="form-group col-lg-6" >
+                            <label for="toDate">To Date:</label>
+                            <input type="text" class="form-control" id="toDate" data-provide="datepicker" style='width: 300px;'>
+                        </div>
+
+                    </div>
+                
+                </div>
+               
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" id="Subscribe">Subscribe</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
 </div>
+
