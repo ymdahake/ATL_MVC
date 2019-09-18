@@ -7,7 +7,7 @@
 <div class="container">
     <h2>Add</h2>
 
-    @using (Html.BeginForm())
+    @using (Html.BeginForm("Create","Book"))
     {
         @Html.AntiForgeryToken()
 
@@ -64,15 +64,8 @@
 
             <div class="form-group">
                 <div>
-                    @if(Model.Book == null)
-                    {
-                    <input type="submit" value="Submit" id="Submit" class="btn btn-primary"  />
-                    }
-                    else
-                    {
-                    <input type="submit" value="Save" id="Submit" class="btn btn-primary" />
-                    }
-                </div>
+                    <input type="submit" value="Save" id="Submit" class="btn btn-primary" />                  
+               </div>
             </div>
 
     }
