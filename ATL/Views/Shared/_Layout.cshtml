@@ -7,6 +7,8 @@
     <link href="https://fonts.googleapis.com/css?family=Lato|Montserrat|Source+Sans+Pro&display=swap" rel="stylesheet">
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+  
 
 </head>
 <body>
@@ -54,8 +56,9 @@
         </footer>
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
+
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+ 
 </body>
 </html>

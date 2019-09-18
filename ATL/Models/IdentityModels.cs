@@ -23,6 +23,7 @@ namespace ATL.Models
 
         public DbSet<Book> Books { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<UserBookSubscription> UserBookSubscriptions { get; set; }
         
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)

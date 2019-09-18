@@ -39,21 +39,30 @@ namespace ATL.Controllers
             {
                 return View("Add");
             }
-            if(book.BookId!=null)
+
+            if (book.BookId!= 0)
             {
-                _db.Books.Add(book);
+                Book bookFromDB = _db.Books.Single(item => item.BookId == book.BookId);
+                bookFromDB.Title = book.Title;
+                bookFromDB.SubTitle = book.SubTitle;
+                bookFromDB.Authors = book.Authors;
+                bookFromDB.CategoryId = book.CategoryId;
+                bookFromDB.Description = book.Description;
+                bookFromDB.Language = book.Language;
+                bookFromDB.Thumbnail = book.Thumbnail;
+                bookFromDB.NoOfCopiesAvailable = book.NoOfCopiesAvailable;
+                bookFromDB.ISBN = book.ISBN;
+                bookFromDB.AverageRating = book.AverageRating;
                 _db.SaveChanges();
             }
             else
             {
-                _db.Books
+                _db.Books.Add(book);
+                _db.SaveChanges();
+
             }
 
-           
-
-            
-
-            return RedirectToAction("Index");
+            return RedirectToAction("Index","Book");
 
         }
 
@@ -73,7 +82,16 @@ namespace ATL.Controllers
             };
             return View("Add", bookViewModel);
 
-                
+
+        }
+
+        public ActionResult Remove(int id )
+        {
+            Book book = _db.Books.Single(item => item.BookId == id);
+            _db.Books.Remove(book);
+            _db.SaveChanges();
+            return RedirectToAction("Index", "Book");
+
         }
     }
 }
